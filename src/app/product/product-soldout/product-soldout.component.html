@@ -1,0 +1,24 @@
+<div class="main-wrap">
+  <div class="table-wrap">
+    <table class="product-list table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">상품명</th>
+          <th scope="col">상품 가격</th>
+          <th scope="col">판매/품절</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>{{product.productName}}</td>
+          <td *ngIf="product.productActive == 1">판매중</td>
+          <td *ngIf="product.productActive == 0">품절</td>
+          <td><button class="btn btn-primary" (click)="selectProduct(product.productNo, product.productActive)">선택</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+    <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="productListLoding()">조회</button>
+  </div>
+  </div>
+</div>

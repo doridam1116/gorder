@@ -1,0 +1,33 @@
+*{
+  font-size: 0.825rem;
+}
+
+.main-wrap{
+  padding: 50px 50px 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.table-wrap{
+  width: 40vw;
+  margin-right: 2vw;
+}
+
+.order-list{
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.order-list td{
+  border-right: 1px solid #ccc;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.order-detail{
+  width: 30vw;
+}
+.order-detail-list{
+  border: 1px solid #ccc;
+}

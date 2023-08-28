@@ -1,0 +1,22 @@
+<div class="main-wrap">
+  <div class="input-wrap">
+    <div>
+      <p>※ 서브는 테이블 번호를 바탕으로 생성됩니다.</p>
+      <p>{{responseMessage}}</p>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">테이블 번호</span>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInputGroup1"
+          placeholder="Username"
+          [(ngModel)]="tableNumber"
+        />
+        <label for="floatingInputGroup1">입력</label>
+      </div>
+    </div>
+    <button class="add-btn btn btn-primary" type="button" value="" (click)="addSub()">서브 추가</button>
+  </div>
+</div>

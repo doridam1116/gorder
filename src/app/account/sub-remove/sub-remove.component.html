@@ -1,0 +1,23 @@
+<div class="main-wrap">
+  <div class="table-wrap">
+    <table class="sub-list table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">서브명</th>
+          <th scope="col">선택</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subSerial of subSerialList">
+          <td>{{subSerial.subSerial}}</td>
+          <td><button class="btn btn-primary" (click)="selectSub(subSerial.subSerial)">선택</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="text" class="form-control" readonly style="width: 100%; text-align: center;" [(ngModel)]="selectValue">
+    <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+    <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="subListLoding()">조회</button>
+    <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="subDelete(selectValue)">선택한 Sub 삭제</button>
+  </div>
+  </div>
+</div>

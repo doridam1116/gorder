@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg bg-secondary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link order-delete" aria-current="page" [routerLink]="'orderDelete'">주문 삭제</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link order-modify" aria-current="page" [routerLink]="'orderModify'">주문 수정</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link order-sales" aria-current="page" [routerLink]="'orderSales'">당일 매출</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>

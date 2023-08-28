@@ -1,0 +1,73 @@
+<div style="display: flex; overflow: auto">
+  <div class="todo-list-wrapper">
+    <div class="todo-list" *ngFor="let list of calendarList">
+      <div class="todo-list-header">
+        {{ list.calendarListName }}<mat-icon style="color:#830a0a; cursor: pointer;" (click)="listDelete(list.calendarListNo)">delete</mat-icon>
+      </div>
+      <ul
+        class="todo-list-items"
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="list.item"
+        (cdkDropListDropped)="drop($event,list.calendar)"
+      >
+        <li *ngFor="let item of list.calendar" cdkDrag class="card-item">
+          {{ item.calendarCard }} <mat-icon class="del-icon" (click)="calendarDelete(item.calendarNo)">delete</mat-icon>
+        </li>
+        <li
+          class="add-item"
+          *ngIf="!isAddCardOpen(list.calendarListNo)"
+          (click)="toggleAddCard(list.calendarListNo)"
+        >
+          +add Card
+        </li>
+        <li *ngIf="isAddCardOpen(list.calendarListNo)" class="li-add-wrap">
+          <textarea
+            class="add-textarea"
+            [(ngModel)]="newCalendarCard"
+          ></textarea>
+          <div style="margin-left: 5px; display: flex; justify-content: left">
+            <button
+              class="btn-add-card btn btn-primary"
+              (click)="addCardSubmit(list.calendarListNo)"
+            >
+              add Card</button
+            ><button
+              class="btn-reset"
+              (click)="closeAddCard(list.calendarListNo)"
+            >
+              X
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="todo-list" *ngIf="showListAddBtn">
+      <div class="todo-list-header">
+        <textarea
+          style="width: 80%; padding-left: 10px; height: 95%;padding-top: 10px;"
+          [(ngModel)]="newCalendarList"
+        ></textarea>
+        <div
+          style="
+            margin-left: 5px;
+            display: flex;
+            justify-content: space-evenly;
+            width: auto;
+          "
+          class="btn-wrap"
+        >
+          <button class="list-add-btn" (click)="addCalendarList()">V</button
+          ><button class="btn-reset" (click)="closeCalendarList()">X</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button type="button" class="add-btn" (click)="addList()">
+        + 리스트 추가
+      </button>
+    </div>
+  </div>
+</div>

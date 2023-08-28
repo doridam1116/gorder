@@ -1,0 +1,25 @@
+<div class="main-wrap">
+  <div class="table-wrap">
+    <table class="sub-list table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">상품명</th>
+          <th scope="col">상품 가격</th>
+          <th scope="col">선택</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>{{product.productName}}</td>
+          <td>{{product.productPrice}}</td>
+          <td><button class="btn btn-primary" (click)="selectProduct(product.productName, product.productNo)">선택</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="text" class="form-control" readonly style="width: 100%; text-align: center;" [(ngModel)]="selectValue">
+    <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+    <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="productListLoding()">조회</button>
+    <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="subDelete(selectValue)">선택한 상품 삭제</button>
+  </div>
+  </div>
+</div>

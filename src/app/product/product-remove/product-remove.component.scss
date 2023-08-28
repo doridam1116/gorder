@@ -1,0 +1,25 @@
+
+*{
+  font-size: 0.825rem;
+}
+.main-wrap{
+  padding: 50px 50px 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-wrap{
+  width: 40vw;
+}
+
+.sub-list{
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.sub-list td{
+  border-right: 1px solid #ccc;
+  align-items: center;
+  vertical-align: middle;
+}

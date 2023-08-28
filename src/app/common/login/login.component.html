@@ -1,0 +1,19 @@
+<div class="main-wrap">
+  <img src="../../assets/GLOGO.png" style="width: 30vw;">
+  <div class="input-group mb-3">
+    <span class="input-group-text">계정 시리얼</span>
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInputGroup1"
+        placeholder="Username"
+        [(ngModel)]="accountSerial"
+        (keypress)="onKeyPress($event)"
+      />
+      <label for="floatingInputGroup1">입력</label>
+    </div>
+  <button type="button" class="btn btn-primary" (click)="loginBtn()">로그인</button>
+  <button type="button" class="btn btn-success" style="border-left: 1px solid #ccc;" (click)="registerBtn()">회원가입</button>
+  </div>
+</div>

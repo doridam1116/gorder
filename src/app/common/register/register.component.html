@@ -1,0 +1,38 @@
+<div class="main-wrap">
+  <img src="../../assets/GLOGO.png" style="width: 30vw" />
+  <div class="input-group mb-3">
+    <span class="input-group-text">가게명</span>
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInputGroup1"
+        placeholder="Username"
+        [(ngModel)]="accountName"
+      />
+      <label for="floatingInputGroup1">입력</label>
+    </div>
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text">가게 전화번호</span>
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        [(ngModel)]="accountTel"
+      />
+      <label for="floatingInputGroup1"
+        >02와 '-' 를 제외하고 입력해주세요.</label
+      >
+    </div>
+  </div>
+  <div>
+    <button type="button" class="btn btn-secondary" [routerLink]="'/login'" style="margin-right: 1vw;">
+      뒤로
+    </button>
+    <button type="button" class="btn btn-primary" (click)="registerBtn()">
+      회원가입
+    </button>
+  </div>
+</div>

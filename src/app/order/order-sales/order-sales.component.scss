@@ -1,0 +1,65 @@
+*{
+  font-size: 0.825rem;
+}
+
+.main-wrap{
+  padding: 50px 50px 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.order-wrap{
+  width: 40vw;
+  margin-right: 2vw;
+}
+
+.order-list{
+  text-align: center;
+  border: 1px solid #ccc;
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: middle;
+  font-size: 0.825rem;
+}
+.order-list thead {
+  display:block;
+}
+.order-list tbody {
+  display:block;
+  max-height: 50vh;
+  overflow: auto;
+}
+.order-list th {
+  width: 25vw;
+}
+
+.order-list td {
+  padding: 10px;
+  width: 25vw;
+  text-align: center;
+}
+
+.sales-price {
+  font-size: 1rem;
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 10vw;
+}
+
+.form-control{
+  padding: 0;
+}
+
+
+.order-detail{
+  width: 40vw;
+}
+.order-detail-list{
+  border: 1px solid #ccc;
+}
+
+
+.order-sales{
+  color: white;
+}

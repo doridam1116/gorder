@@ -1,0 +1,57 @@
+<div class="main-wrap">
+  <form class="input-wrap" #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="input-group mb-3">
+      <span class="input-group-text">상품명</span>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="productName"
+          name="productName"
+          [(ngModel)]="productName"
+          required
+        />
+        <label for="floatingInputGroup1">필수 값</label>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">설명</span>
+      <div class="form-floating">
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="productDetail"
+            name="productDetail"
+            id="floatingTextarea2"
+            style="height: 100px"
+            [(ngModel)]="productDetail"
+          ></textarea>
+          <label for="floatingTextarea2">필수 값</label>
+        </div>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">가격</span>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="productPrice"
+          name="productPrice"
+          [(ngModel)]="productPrice"
+        />
+        <label for="floatingInputGroup1">필수 값</label>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">카테고리</span>
+      <div class="form-floating">
+        <select class="form-select" [(ngModel)]="categoryNo" name="category">
+          <option *ngFor="let category of responseData" [ngValue]="category.categoryNo">{{category.categoryName}}</option>
+        </select>
+        <label for="floatingInputGroup1">선택해주세요.</label>
+      </div>
+    </div>
+    <button class="add-btn btn btn-primary" type="submit">상품 추가</button>
+  </form>
+</div>

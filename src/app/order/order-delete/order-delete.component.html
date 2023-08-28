@@ -1,0 +1,54 @@
+<div class="main-wrap">
+  <div class="table-wrap">
+    <table class="order-list table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">주문번호</th>
+          <th scope="col">주문 서브</th>
+          <th scope="col">주문 날짜</th>
+          <th scope="col">선택</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderList">
+          <td>{{order.orderNo}}</td>
+          <td>{{order.subSerial}}</td>
+          <td>{{order.orderDate | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+          <td><button class="btn btn-primary" (click)="selectOrder(order)">선택</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="text" class="form-control" readonly style="width: 100%; text-align: center;" [value]="selectValue">
+    <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+      <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="orderListLoding()">조회</button>
+      <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="orderDelete()">선택한 주문 삭제</button>
+    </div>
+  </div>
+
+
+  <div *ngIf="selectOrderDetail">
+    <div class="order-detail">
+      <p style="text-align: center; font-size: 1.5rem;">{{order.orderNo}} 주문서</p>
+      <table class="order-detail-list table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">상품명</th>
+            <th scope="col">상품 수량</th>
+            <th scope="col">금액</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orderDetail of orderDetailList">
+            <td>{{orderDetail.productName}}</td>
+            <td>{{orderDetail.orderDetailCount}}</td>
+            <td>{{orderDetail.price | currency:'KRW':'symbol':'1.0-0'}}원</td>
+          </tr>
+          <tr>
+            <td>결제 금액</td>
+            <td colspan="2">{{totalPrice | currency:'KRW':'symbol':'1.0-0'}}원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

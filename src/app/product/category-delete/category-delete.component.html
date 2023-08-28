@@ -1,0 +1,26 @@
+<div class="main-wrap">
+  <div class="table-wrap">
+    <div>
+      <p>※ 주의) 카테고리 삭제시 카테고리에 속한 상품이 제거됩니다.</p>
+    </div>
+    <table class="sub-list table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">카테고리명</th>
+          <th scope="col">선택</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categoryList">
+          <td>{{category.categoryName}}</td>
+          <td><button class="btn btn-primary" (click)="selectCategory(category.categoryName,category.categoryNo)">선택</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="text" class="form-control" readonly style="width: 100%; text-align: center;" [(ngModel)]="selectValue">
+    <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+    <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="categoryListLoding()">조회</button>
+    <button type="button" class="btn btn-secondary" style=" width: 40%;" (click)="categoryDelete(categoryNo)">선택한 카테고리 삭제</button>
+  </div>
+  </div>
+</div>

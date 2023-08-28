@@ -1,0 +1,20 @@
+<div class="main-wrap">
+  <div class="input-wrap">
+    <div>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">카테고리 명</span>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInputGroup1"
+          placeholder="categoryName"
+          [(ngModel)]="categoryName"
+        />
+        <label for="floatingInputGroup1" style="color:#ccc">입력</label>
+      </div>
+    </div>
+    <button class="add-btn btn btn-primary" type="button" value="" (click)="addCategory()" >카테고리 추가</button>
+  </div>
+</div>
